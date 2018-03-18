@@ -16,17 +16,6 @@ source ~/.venv/bin/activate
 
 # Install via pip
 pip install -U listed
-
-# Add some demo files
-mkdir ~/.listed
-wget https://raw.githubusercontent.com/sayanarijit/listed/master/demofiles/a.md -O ~/.listed/a.md
-wget https://raw.githubusercontent.com/sayanarijit/listed/master/demofiles/b.txt -O ~/.listed/b.txt
-
-# Run production instance  (robust WSGI server)
-gunicorn -b 0.0.0.0:8080 listed.app:app
-
-# Or run development instance (for debugging only)
-FLASK_APP=listed.app:app flask run -p 8080
 ```
 
 
@@ -40,9 +29,14 @@ FLASK_APP=listed.app:app flask run -p 8080
 ### Run
 
 ```
-# Production
-listed run prod
+# Add some demo files
+mkdir ~/.listed
+wget https://raw.githubusercontent.com/sayanarijit/listed/master/demofiles/a.md -O ~/.listed/a.md
+wget https://raw.githubusercontent.com/sayanarijit/listed/master/demofiles/b.txt -O ~/.listed/b.txt
 
-# Development (debug enabled)
-listed run dev
+# Run production instance  (robust WSGI server)
+gunicorn -b 0.0.0.0:8080 listed.app:app
+
+# Or run development instance (for debugging only)
+FLASK_APP=listed.app:app flask run -p 8080
 ```
