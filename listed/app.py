@@ -1,4 +1,5 @@
 import os
+import json
 import codecs
 from markdown import markdown
 from flask import Flask, render_template, redirect, abort, Markup
@@ -18,8 +19,12 @@ def listfiles():
     return files
 
 
+@app.template_filter('json')
+def json_filter(data):
+    return json.dumps(data)
+
 @app.template_filter('marked')
-def marked(content):
+def marked_filter(content):
     return Markup(markdown(
         content, extensions=[
             'markdown.extensions.extra',
@@ -54,4 +59,5 @@ def display_file(filename):
 
 
 if __name__ == '__main__':
-    app.run('0.0.0.0', port=8080, debug=True)
+    app.jinja_env.auto_reload = True
+    app.run(port=8080, debug=True)
