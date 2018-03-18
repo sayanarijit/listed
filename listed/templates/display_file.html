@@ -23,7 +23,7 @@
             <ul class="list-group list-group-flush">
               {% for filename in files %}
                 <a class="list-group-item list-group-item-action" href={{ url_for('display_file', filename=filename) }}>
-                  <i class="fa fa-file-alt"></i> {{ filename.split('.')[0] }}</a>
+                  <i class="fa fa-sticky-note-o"></i> {{ filename.split('.')[0] }}</a>
               {% endfor %}
             </ul>
           </div>
@@ -31,7 +31,7 @@
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
           <div class="card">
-            <h3 class="card-header text-center"><i class="fa fa-file-alt"></i> {{ name }}</h3>
+            <h3 class="card-header text-center">{{ name }}</h3>
             <div class="card-body">
               {% if ext == 'md' %}
                 <div class='markdown'>{{ content|marked }}</div>

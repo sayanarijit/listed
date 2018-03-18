@@ -2,7 +2,7 @@ import os
 import codecs
 from markdown import markdown
 from flask import Flask, render_template, redirect, abort, Markup
-from listed.config import STORAGE, PORT
+from listed.config import STORAGE
 
 
 app = Flask(__name__)
@@ -54,4 +54,4 @@ def display_file(filename):
 
 
 if __name__ == '__main__':
-    app.run('0.0.0.0', port=PORT, debug=True)
+    app.run('0.0.0.0', port=8080, debug=True)

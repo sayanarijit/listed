@@ -35,7 +35,6 @@ FLASK_APP=listed.app:app flask run -p 8080
 | Config       | Environment variable | Default     |
 | ------------ | -------------------- | ----------- |
 | File storage | LISTED_STORAGE       | '~/.listed' |
-| HTTP port    | LISTED_PORT          | 8080        |
 
 
 ### Run
