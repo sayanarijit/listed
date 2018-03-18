@@ -2,7 +2,7 @@ import os
 import codecs
 from markdown import markdown
 from flask import Flask, render_template, redirect, abort, Markup
-from config import STORAGE, PORT
+from listed.config import STORAGE, PORT
 
 
 app = Flask(__name__)

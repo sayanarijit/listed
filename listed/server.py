@@ -1,7 +1,7 @@
 import sys
 from gevent.pywsgi import WSGIServer
-from app import app
-from config import PORT
+from listed.app import app
+from listed.config import PORT
 
 
 server = WSGIServer(('', PORT), app)
