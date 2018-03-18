@@ -9,13 +9,8 @@ List and display files in the web
 ### Installation
 
 ```
-# Setup virtual environment (optional)
-pip install --user virtualenv
-virtualenv ~/.venv
-source ~/.venv/bin/activate
-
 # Install via pip
-pip install --user listed
+pip install -U --user listed
 
 # Add some demo files
 wget https://raw.githubusercontent.com/sayanarijit/listed/master/demofiles/a.md ~/.listed/a.md
