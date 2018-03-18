@@ -6,6 +6,4 @@ install:
     - python setup.py install
 script:
     - python setup.py test
-    - which listed-dev
-    - which listed-prod
-    - python -c 'from listed.server import prod, dev'
+    - python -c 'from listed.app import app'

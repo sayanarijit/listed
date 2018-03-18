@@ -9,18 +9,24 @@ List and display files in the web
 ### Installation
 
 ```
+# Setup virtual environment
+pip install --user virtualenv
+python -m virtualenv ~/.venv
+source ~/.venv/bin/activate
+
 # Install via pip
-pip install -U --user listed
+pip install -U listed
 
 # Add some demo files
-wget https://raw.githubusercontent.com/sayanarijit/listed/master/demofiles/a.md ~/.listed/a.md
-wget https://raw.githubusercontent.com/sayanarijit/listed/master/demofiles/b.txt ~/.listed/b.txt
+mkdir ~/.listed
+wget https://raw.githubusercontent.com/sayanarijit/listed/master/demofiles/a.md -o ~/.listed/a.md
+wget https://raw.githubusercontent.com/sayanarijit/listed/master/demofiles/b.txt -o ~/.listed/b.txt
 
 # Run production instance  (robust WSGI server)
-listed run prod
+gunicorn -w 4 -b 0.0.0.0:8080 listed.app:app
 
 # Or run development instance (for debugging only)
-listed run dev   
+FLASK_APP=listed:app.app flask run 
 ```
 
 
