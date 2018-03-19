@@ -28,7 +28,6 @@ def marked_filter(content):
     return Markup(markdown(
         content, extensions=[
             'markdown.extensions.extra',
-            'markdown.extensions.nl2br',
             'markdown.extensions.toc'
         ]
     ).replace('<table>', '<table class="table">'))
@@ -46,7 +45,7 @@ def index():
 def display_file(filename):
     splitted, ext = filename.split('.'), None
     if len(splitted) > 1: ext = splitted.pop().lower()
-    name = '.'.join(splitted)
+    name = splitted[0]
 
     filepath = os.path.join(storage, filename)
 
