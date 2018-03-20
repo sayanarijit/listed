@@ -43,4 +43,4 @@ FLASK_APP=listed.app:app flask run -p 8080
 
 ### Result
 
-[![listed-home](https://raw.githubusercontent.com/sayanarijit/listed/master/screenshots/listed-home.gif)](http://localhost:8080)
+[![listed-home](https://raw.githubusercontent.com/sayanarijit/listed/master/screenshots/listed-home.png)](http://localhost:8080)
