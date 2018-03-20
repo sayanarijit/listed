@@ -40,3 +40,7 @@ gunicorn -b 0.0.0.0:8080 listed.app:app
 # Or run development instance (for debugging only)
 FLASK_APP=listed.app:app flask run -p 8080
 ```
+
+### Result
+
+[![listed-home](https://raw.githubusercontent.com/sayanarijit/listed/master/screenshots/listed-home.gif)](http://localhost:8080)
